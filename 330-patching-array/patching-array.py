@@ -3,9 +3,7 @@ class Solution:
         m, r, i = 1, 0, 0
         while m <= n:
             if i < len(nums) and nums[i] <= m:
-                m += nums[i]
-                i += 1
+                m, i = m + nums[i], i + 1
             else:
-                m *= 2
-                r += 1
+                m, r = m*2, r + 1
         return r
