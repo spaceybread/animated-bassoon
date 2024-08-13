@@ -1,10 +1,12 @@
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
-        n = sorted(nums)
-        c = 1 
-
-        for a in n:
-            if a == c:
-                c += 1
+        d = {}
+        for a in nums:
+            d[a] = True
         
-        return c
+        c = 1
+
+        while True:
+            if d.get(c) == None:
+                return c
+            c += 1
