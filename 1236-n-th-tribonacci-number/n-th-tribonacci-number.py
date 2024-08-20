@@ -10,6 +10,8 @@ class Solution:
         i = 2
         while i < n: 
             d = a + b + c
-            a, b, c = b, c, d
+            a = b
+            b = c
+            c = d
             i += 1
         return d
