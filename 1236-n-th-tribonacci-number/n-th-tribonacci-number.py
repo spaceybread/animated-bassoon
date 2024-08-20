@@ -1,4 +1,7 @@
 class Solution:
+    import functools
+
+    @functools.cache
     def tribonacci(self, n: int) -> int:
         
         if n == 0:
@@ -6,12 +9,4 @@ class Solution:
         if n == 1 or n == 2:
             return 1
         
-        a, b, c, d = 0, 1, 1, 0
-        i = 2
-        while i < n: 
-            d = a + b + c
-            a = b
-            b = c
-            c = d
-            i += 1
-        return d
+        return self.tribonacci(n - 1) + self.tribonacci(n - 2) + self.tribonacci(n - 3)
