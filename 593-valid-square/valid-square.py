@@ -5,6 +5,7 @@ class Solution:
 
         for i in range(4):
             for j in range(i + 1, 4):
+                print(i, j)
                 slopes.add(dist(tuple(p[i]), tuple(p[j])))
         
         return len(slopes) == 2 and 0 not in slopes
