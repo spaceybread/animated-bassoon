@@ -13,7 +13,7 @@ class Solution:
                 j += 1
                 flag = True
         
-        for x in range(i, len(word1)): out += word1[x]
-        for x in range(j, len(word2)): out += word2[x]
+        out += word1[i:]
+        out += word2[j:]
 
         return out
