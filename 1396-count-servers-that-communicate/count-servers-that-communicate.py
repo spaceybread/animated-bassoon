@@ -4,7 +4,6 @@ class Solution:
 
         for i in range(len(grid)):
             if sum(grid[i]) > 1:
-                print(sum(grid[i]))
                 for j in range(len(grid[0])):
                     if grid[i][j] == 1:
                         rs.add((i, j))
@@ -20,6 +19,5 @@ class Solution:
             if s > 1:
                 for c in l:
                     cs.add(c)
-        print(rs)
-        print(cs)
+
         return len(cs.union(rs))
