@@ -1,19 +1,17 @@
 from sortedcontainers import SortedSet
 class NumberContainers:
-
     def __init__(self):
-        self.numberToIndices = defaultdict(SortedSet)
-        self.indexToNumber = defaultdict()
+        self.nti = defaultdict(SortedSet)
+        self.itn = defaultdict()
 
-    def change(self, index: int, number: int) -> None:
-        if index in self.indexToNumber:
-            temp = self.indexToNumber[index]
-            self.numberToIndices[temp].discard(index)
-        self.indexToNumber[index] = number
-        self.numberToIndices[number].add(index)
+    def change(self, idx: int, n: int) -> None:
+        if idx in self.itn:
+            temp = self.itn[idx]
+            self.nti[temp].discard(idx)
+        self.itn[idx] = n
+        self.nti[n].add(idx)
 
-    def find(self, number: int) -> int:
-        if not self.numberToIndices[number]:
+    def find(self, n: int) -> int:
+        if not self.nti[n]:
             return -1
-        else:
-            return self.numberToIndices[number][0]
+        return self.nti[n][0]
