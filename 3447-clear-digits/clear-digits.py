@@ -1,13 +1,9 @@
 class Solution:
     def clearDigits(self, s: str) -> str:
-        ls = list(s)
+        st = deque()
 
-        for i in range(len(ls)):
-            if ls[i].isdigit():
-                for j in range(i, -1, -1):
-                    if not ls[j].isdigit() and ls[j] != "":
-                        ls[j] = ""
-                        break
-                ls[i] = ""
+        for c in s: 
+            if not c.isdigit(): st.append(c)
+            else: st.pop()
         
-        return "".join(ls)
+        return "".join(st)
