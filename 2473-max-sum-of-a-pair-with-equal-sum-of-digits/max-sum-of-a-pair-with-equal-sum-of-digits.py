@@ -2,7 +2,7 @@ class Solution:
     def maximumSum(self, nums: List[int]) -> int:
         ma = {}
         for n in nums:
-            s = sum(int(d) for d in str(n))
+            s = sum(int(c) for c in str(n))
 
             if s in ma:
                 ma[s].append(n)
