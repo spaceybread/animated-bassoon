@@ -5,12 +5,6 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-
-    def fi(self, s, d):
-        pattern = rf"{'-' * d}(\d+)"
-        matches = re.findall(pattern, s)
-        return list(map(int, matches))
-
     def recoverFromPreorder(self, t: str) -> Optional[TreeNode]:
         st, i = [], 0
         
