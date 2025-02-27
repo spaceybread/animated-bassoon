@@ -12,7 +12,6 @@ class Solution:
                     a, b = b, a + b
                     l += 1
 
-                if l > 2 and l > out:
-                    out = l
+                if l > 2 and l > out: out = l
 
         return out
