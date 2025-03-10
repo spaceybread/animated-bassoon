@@ -8,7 +8,7 @@ class Solution:
             else: c += 1
 
             while len(v) == 5 and c > k:
-                if word[i] in "aeiou": 
+                if word[i] in "aeiou" and v[word[i]] > 0: 
                     v[word[i]] -= 1
                     if v[word[i]] == 0: del v[word[i]]
 
