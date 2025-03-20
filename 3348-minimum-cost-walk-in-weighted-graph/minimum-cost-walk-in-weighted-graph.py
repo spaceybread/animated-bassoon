@@ -2,9 +2,9 @@ class Solution:
     def minimumCost(self, n: int, es: List[List[int]], qs: List[List[int]]) -> List[int]:
         out = []
         map = defaultdict(list)
-        root = {i:i for i in range(n)}
+        root = {i : i for i in range(n)}
         group = [0] * n
-        ct = {i:(1<<32)-1 for i in range(n)}
+        ct = {i : (1 << 32) - 1 for i in range(n)}
 
         def f(a):
             if a != root[a]: return f(root[a])
@@ -25,8 +25,7 @@ class Solution:
                     group[rb] += 1
                     ct[rb] = ct[ra] & w & ct[rb]
 
-            else:
-                ct[ra] &= w
+            else: ct[ra] &= w
             
         
         for frm, dst in qs:
