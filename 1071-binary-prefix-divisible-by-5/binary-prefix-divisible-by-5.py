@@ -4,7 +4,6 @@ class Solution:
         out = []
         for x in nums: 
             c += x
-            if c % 5 == 0: out.append(True)
-            else: out.append(False)
+            out.append(c % 5 == 0)
             c = 2 * c
         return out
