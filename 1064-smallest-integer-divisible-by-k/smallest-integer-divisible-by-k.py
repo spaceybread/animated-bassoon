@@ -7,8 +7,10 @@ class Solution:
         if k % 2 == 0: return -1
         if k % 5 == 0: return -1 
 
-        o = 1
+        o = 1 % k
+        l = 1
 
         while True: 
-            if o % k == 0: return len(str(o))
-            o = 10 * o + 1
+            if o == 0: return l
+            o = (10 * o + 1) % k
+            l += 1
