@@ -1,18 +1,19 @@
 class Solution:
     def minimumDistance(self, nums: List[int]) -> int:
         
-        i, j, k = 0, 1, 2
-        best = 10**7 + 1
+        blah = defaultdict(list)
+        vals = set()
 
-        while i < len(nums) - 2:
-            j = i + 1
-            while j < len(nums) - 1:
-                k = j + 1
-                while k < len(nums):
-                    if nums[i] == nums[j] == nums[k]:
-                        best = min(best, abs(i - j) + abs(j - k) + abs(k - i))
-                    k += 1
-                j += 1
-            i += 1
+        for i in range(len(nums)):
+            vals.add(nums[i])
+            blah[nums[i]] += [i]
+
+        best = 10**7 + 1
+        for x in list(vals):
+            li = blah[x]
+
+            if len(li) < 3: continue
+
+            for i in range(len(li) - 2): best = min(best, 2 * (li[i + 2] - li[i]))        
         
-        return best if best != 10**7 + 1 else -1
+        return best if best != 10**7 + 1 else -1 
