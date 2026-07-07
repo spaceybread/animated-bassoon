@@ -4,7 +4,7 @@ class Solution:
         a, b = 0, 0
 
         for l, r in sp:
-            a += r > b
+            a += 1 if r > b else 0
             b = max(b, r)
         
         return a
