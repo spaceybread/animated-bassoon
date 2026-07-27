@@ -1,5 +1,13 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        l = sorted(nums)
-        return (l.pop(-1) - 1) * (l.pop(-1) - 1)
+        bb, sb = -1, -2
+
+        for x in nums:
+            if x >= bb:
+                sb = bb
+                bb = x
+            if bb > x >= sb:
+                sb = x
+            
         
+        return (bb - 1) * (sb - 1)
